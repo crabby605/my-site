@@ -1,103 +1,120 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+import Script from "next/script";
+import "@/app/globals.css";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    return (
+        <div className="min-h-screen flex flex-col bg-[#12100e] text-[#d4df9e] p-6 items-center w-full relative">
+            <nav className="absolute top-4 left-6 flex space-x-6">
+                {["Home", "Projects", "Blog", "Contact"].map((item) => (
+                    <Link
+                        key={item}
+                        href="#"
+                        className="hover:text-white hover:scale-110 transition-transform duration-200 ease-in-out"
+                    >
+                        {item}
+                    </Link>
+                ))}
+            </nav>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <header className="w-full border-b border-[#d4df9e] pb-4 text-center">
+                <h1 className="text-4xl font-bold">vihaan.codes</h1>
+            </header>
+
+            <main className="w-full max-w-5xl flex flex-col items-center mt-6 flex-grow">
+                <section className="w-full flex flex-col md:flex-row items-center md:items-start">
+
+                    <div className="flex-1 text-center md:text-left">
+                        <h2 className="text-3xl font-semibold mb-2">About Me</h2>
+                        <p className="mb-4">
+                            hi there!, so it looks like you've stumbled upon my website! it must've been a long journey traveller.
+                            anyways this is me Vihaan, i go by crabby or crabby605 on the internet but you can call me vihaan ^_^
+                            i assume looking at this site you've gotten to know that i'm not a good designer but i cant do anything
+                            about it.
+                        </p>
+                        <p>
+                            i use arch btw. and debian, i wanna be a cybersecurity expert maybe at palo alto or cloudflare (if ur reading pls hire)
+                        </p>
+                    </div>
+
+                    <div className="w-64 h-64 mb-4 md:mb-0 md:ml-6">
+                        <Image
+                            src="/profile.png"
+                            alt="My Picture"
+                            width={256}
+                            height={256}
+                            className="rounded-full border-4 border-[#d4df9e]"
+                        />
+                    </div>
+                </section>
+            </main>
+
+            <div className="absolute bottom-12 left-6">
+                <Link
+                    href="https://github.com/crabby605"
+                    className="text-[#d4df9e] relative text-lg font-semibold transition-transform duration-300 ease-in-out hover:scale-110"
+                >
+                    Visit my GitHub →
+                    <span className="block w-0 h-0.5 bg-[#d4df9e] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+                </Link>
+            </div>
+
+            <footer className="w-full border-t border-[#d4df9e] pt-4 text-center mt-auto">
+                <div className="flex flex-wrap justify-center gap-4 w-full items-center">
+                    {[
+                        { name: "debian", link: "https://www.debian.org/" },
+                        { name: "ublock", link: "https://ublockorigin.com/" },
+                        { name: "nocookie", link: "" },
+                        { name: "tor", link: "https://www.torproject.org/" },
+                        { name: "github", link: "https://github.com/" },
+                        { name: "doomrl", link: "https://drl.chaosforge.org/" },
+                        { name: "firefoxget", link: "https://getfirefox.com/" },
+                        { name: "nclinux", link: "" },
+                    ].map((btn) => (
+                        <Link
+                            key={btn.name}
+                            href={btn.link}
+                            target="_blank"
+                            className="transition-transform duration-200 ease-in-out hover:scale-110"
+                        >
+                            <Image src={`/${btn.name}.gif`} alt={btn.name} width={88} height={31} />
+                        </Link>
+                    ))}
+
+                    <iframe
+                        src="https://increm.net/badge?key=crabbyscounter"
+                        title="incremnet badge"
+                        width="88"
+                        height="31"
+                        style={{ border: "none", background: "url('https://increm.net/bg.png')" }}
+                    ></iframe>
+
+                    <div className="flex space-x-2">
+                        <Link
+                            href="https://webring.hackclub.com/"
+                            id="previousBtn"
+                            className="text-[#d4df9e] hover:text-white hover:scale-110 transition-transform duration-200 ease-in-out"
+                            title="Previous"
+                        >
+                            ‹
+                        </Link>
+                        <Link href="https://webring.hackclub.com/" className="webring-logo">
+                            <Image src="/webring-logo.png" alt="Hack Club Webring" width={88} height={31} />
+                        </Link>
+                        <Link
+                            href="https://webring.hackclub.com/"
+                            id="nextBtn"
+                            className="text-[#d4df9e] hover:text-white hover:scale-110 transition-transform duration-200 ease-in-out"
+                            title="Next"
+                        >
+                            ›
+                        </Link>
+                    </div>
+                </div>
+            </footer>
+            <Script src="https://webring.hackclub.com/embed.min.js" strategy="lazyOnload" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    );
 }

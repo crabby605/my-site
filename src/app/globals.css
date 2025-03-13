@@ -14,8 +14,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #12100e;
+    --foreground: #d4df9e;
   }
 }
 
@@ -24,3 +24,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+@font-face {
+  font-family: '0xProto';
+  src: url('/0xProto.woff2') format('woff2'),
+  url('/0xProto.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2 {
+  font-family: '0xProto', sans-serif;
+}
+
