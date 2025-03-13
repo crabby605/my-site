@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "vihaan.codes",
-  description: "welcome to my personal lil space on the internet!",
+  description: "welcome to my personal lil space on the internet!, i code stuff",
 };
 
 export default function RootLayout({ children }) {
