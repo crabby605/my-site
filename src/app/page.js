@@ -25,17 +25,16 @@ export default function Home() {
 
             <main className="w-full max-w-5xl flex flex-col items-center mt-6 flex-grow">
                 <section className="w-full flex flex-col md:flex-row items-center md:items-start">
-
                     <div className="flex-1 text-center md:text-left">
                         <h2 className="text-3xl font-semibold mb-2">About Me</h2>
                         <p className="mb-4">
-                            hi there!, so it looks like you've stumbled upon my website! it must've been a long journey traveller.
-                            anyways this is me Vihaan, i go by crabby or crabby605 on the internet but you can call me vihaan ^_^
-                            i assume looking at this site you've gotten to know that i'm not a good designer but i cant do anything
+                            Hi there!, so it looks like you&apos;ve stumbled upon my website! It must&apos;ve been a long journey, traveler.
+                            Anyways, this is me Vihaan, I go by Crabby or Crabby605 on the internet, but you can call me Vihaan ^_^.
+                            I assume looking at this site you&apos;ve gotten to know that I&apos;m not a good designer, but I can&apos;t do anything
                             about it.
                         </p>
                         <p>
-                            i use arch btw. and debian, i wanna be a cybersecurity expert maybe at palo alto or cloudflare (if ur reading pls hire)
+                            I use Arch, by the way. And Debian. I wanna be a cybersecurity expert—maybe at Palo Alto or Cloudflare (if you&apos;re reading, please hire me).
                         </p>
                     </div>
 
@@ -54,7 +53,7 @@ export default function Home() {
             <div className="absolute bottom-12 left-6">
                 <Link
                     href="https://github.com/crabby605"
-                    className="text-[#d4df9e] relative text-lg font-semibold transition-transform duration-300 ease-in-out hover:scale-110"
+                    className="text-[#d4df9e] relative text-lg font-semibold transition-transform duration-300 ease-in-out hover:scale-110 group"
                 >
                     Visit my GitHub →
                     <span className="block w-0 h-0.5 bg-[#d4df9e] transition-all duration-500 ease-in-out group-hover:w-full"></span>
